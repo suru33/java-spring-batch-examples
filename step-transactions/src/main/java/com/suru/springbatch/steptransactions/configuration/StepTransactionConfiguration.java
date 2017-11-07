@@ -73,12 +73,24 @@ public class StepTransactionConfiguration {
     }
 
     @Bean
-    public Job stepJobs() {
+    public Job transitionJobSimpleNext() {
         return jobBuilderFactory.get("step-jobs-using-next")
-                .start(step1())
-                .next(step2())
-                .next(step3())
-                .next(step4())
+                .start(step1()) // start with step 1
+                .next(step2())  // on completion of step 1 execute step 2
+                .next(step3())  // then step 3
+                .next(step4())  // then step 4 and build
+                .build();
+    }
+
+    // which is same as above Job
+    // but used job flows
+    @Bean
+    public Job transitionJobNextMethod2() {
+        return jobBuilderFactory.get("step-jobs-using-next")
+                .start(step1()).on("COMPLETED").to(step2()) // on completion of step 1 go to step 2
+                .from(step2()).on("COMPLETED").to(step3())  // on completion of step 2 go to step 3
+                .from(step3()).on("COMPLETED").to(step4())  // on completion of step 3 go to step 4
+                .end()  // on completion of step 4 end the job
                 .build();
     }
 }
