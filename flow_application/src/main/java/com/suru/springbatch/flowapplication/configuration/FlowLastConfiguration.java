@@ -15,34 +15,30 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FlowStartConfiguration {
-
-    private JobBuilderFactory jobBuilderFactory;
-    private StepBuilderFactory stepBuilderFactory;
+public class FlowLastConfiguration {
 
     @Autowired
-    public FlowStartConfiguration(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory) {
-        this.jobBuilderFactory = jobBuilderFactory;
-        this.stepBuilderFactory = stepBuilderFactory;
-    }
+    private JobBuilderFactory jobBuilderFactory;
+    @Autowired
+    private StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Step startStep() {
-        return stepBuilderFactory.get("start-flow-step")
+    public Step startingStep() {
+        return stepBuilderFactory.get("FlowLast Step")
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                        System.out.println(">>>>>>>> start-flow-step");
+                        System.out.println(">>>>>>>> FlowLast Out");
                         return RepeatStatus.FINISHED;
                     }
                 }).build();
     }
 
     @Bean
-    public Job startJob(@Qualifier("my-step-flow") Flow flow) {
-        return jobBuilderFactory.get("start-flow-job")
-                .start(flow)
-                .next(startStep())
+    public Job fistJobLastFlow(@Qualifier("flow-bean") Flow flow) {
+        return jobBuilderFactory.get("FlowLast Job")
+                .start(startingStep())
+                .on("COMPLETED").to(flow)
                 .end()
                 .build();
     }

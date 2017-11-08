@@ -15,20 +15,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FlowConfiguration {
 
-    private StepBuilderFactory stepBuilderFactory;
-
     @Autowired
-    public FlowConfiguration(StepBuilderFactory stepBuilderFactory) {
-        this.stepBuilderFactory = stepBuilderFactory;
-    }
+    private StepBuilderFactory stepBuilderFactory;
 
     @Bean
     public Step flowStep1() {
-        return stepBuilderFactory.get("flowConfigStep1")
+        return stepBuilderFactory.get("FlowBuilder-Step1")
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                        System.out.println(">>>>>> flowConfigStep1");
+                        System.out.println(">>>>>> FlowBuilder-Step1-Out");
                         return RepeatStatus.FINISHED;
                     }
                 }).build();
@@ -36,19 +32,19 @@ public class FlowConfiguration {
 
     @Bean
     public Step flowStep2() {
-        return stepBuilderFactory.get("flowConfigStep2")
+        return stepBuilderFactory.get("FlowBuilder-Step2")
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                        System.out.println(">>>>>> flowConfigStep2");
+                        System.out.println(">>>>>> FlowBuilder-Step2-Out");
                         return RepeatStatus.FINISHED;
                     }
                 }).build();
     }
 
-    @Bean(name = "my-step-flow")
+    @Bean(name = "flow-bean")
     public Flow buildFlow() {
-        FlowBuilder<Flow> flowBuilder = new FlowBuilder<>("step-flow-builder");
+        FlowBuilder<Flow> flowBuilder = new FlowBuilder<>("Flow-Builder");
         flowBuilder.start(flowStep1())
                 .next(flowStep2())
                 .end();
