@@ -4,3 +4,6 @@
 /split-app.iml
 /mvnw.cmd
 /mvnw
+/.classpath
+/.project
+/.settings

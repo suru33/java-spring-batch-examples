@@ -76,9 +76,7 @@ public class BatchConfiguration {
     }
 
     class OddDecider implements JobExecutionDecider {
-
         private int count = 0;
-
         @Override
         public FlowExecutionStatus decide(JobExecution jobExecution, StepExecution stepExecution) {
             count++;
@@ -92,5 +90,4 @@ public class BatchConfiguration {
             }
         }
     }
-
 }
