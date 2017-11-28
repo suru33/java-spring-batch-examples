@@ -1,0 +1,8 @@
+/.idea/
+/.mvn/
+/target/
+/database-item-reader.iml
+/mvnw.cmd
+/mvnw
+/.project
+/.settings/
