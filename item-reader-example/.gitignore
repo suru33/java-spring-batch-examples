@@ -1,0 +1,8 @@
+/.idea/
+/.mvn/
+/target/
+/item-reader-example.iml
+/mvnw.cmd
+/mvnw
+/.project
+/.settings/
