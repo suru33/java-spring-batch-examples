@@ -29,7 +29,7 @@ public class ItemReaderJob {
     @Bean
     public Step itemReaderStep() {
         return stepBuilderFactory.get("item-reader-step")
-                .<String, String>chunk(2)
+                .<String, String>chunk(2) //items per transaction
                 .reader(simpleItemReader())
                 .writer(new ItemWriter<String>() {
                     @Override
