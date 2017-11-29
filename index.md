@@ -11,3 +11,4 @@
 9. item-reader-example
 10. database-item-reader
 11. flat-file-reader
+12. xml-reader
