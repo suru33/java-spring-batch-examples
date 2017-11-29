@@ -1,4 +1,4 @@
-package com.suru.springbatch.flatfilereader.Configuration;
+package com.suru.springbatch.flatfilereader.configuration;
 
 import com.suru.springbatch.flatfilereader.domain.Customer;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
