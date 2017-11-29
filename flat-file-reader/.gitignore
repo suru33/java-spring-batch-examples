@@ -1,0 +1,8 @@
+/.idea/
+/.mvn/
+/target/
+/flat-file-reader.iml
+/mvnw.cmd
+/mvnw
+/.project
+/.settings/
