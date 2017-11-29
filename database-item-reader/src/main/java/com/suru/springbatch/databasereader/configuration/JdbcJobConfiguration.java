@@ -31,6 +31,7 @@ public class JdbcJobConfiguration {
 
     private DataSource dataSource;
 
+    // getting conflict from multiple resources so, added Qualifier annotation
     @Autowired
     public void setDataSource(@Qualifier("dataSource") DataSource dataSource) {
         this.dataSource = dataSource;
@@ -39,8 +40,9 @@ public class JdbcJobConfiguration {
     @Bean
     public JdbcCursorItemReader<Customer> cursorItemReader() {
         JdbcCursorItemReader<Customer> reader = new JdbcCursorItemReader<>();
-        reader.setDataSource(this.dataSource);
-        reader.setRowMapper(new CustomRowMapper());
+        reader.setDataSource(this.dataSource); // setting the data source
+        reader.setRowMapper(new CustomRowMapper()); // adding custom row mapper
+        // defining SQL
         reader.setSql("select id, first_name, last_name, random from customer order by id");
         return reader;
     }
@@ -88,7 +90,8 @@ public class JdbcJobConfiguration {
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step-1")
-                .<Customer, Customer>chunk(10)
+                //<Input, Output> and chunk size
+                .<Customer, Customer>chunk(10) // 10 records per each transaction
                 .reader(pagingItemReader())
                 .writer(customerItemWriter())
                 .build();
