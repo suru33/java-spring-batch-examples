@@ -15,6 +15,7 @@
 11. [flat-file-reader][11]
 12. [xml-reader][12]
 13. [read-multiple-datasources][13]
+14. [custom-item-reader-implementation][14]
 
 [1]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/hello-world
 [2]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/step-transactions
@@ -29,3 +30,4 @@
 [11]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/flat-file-reader
 [12]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/xml-reader
 [13]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/read-multiple-datasources
+[14]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/custom-item-reader-implementation
