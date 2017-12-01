@@ -30,8 +30,11 @@ public class MultipleResourceReaderJobConfiguration {
     @Bean
     public MultiResourceItemReader<Customer> customerMultiResourceItemReader() {
         MultiResourceItemReader<Customer> reader = new MultiResourceItemReader<>();
+        // set resources using SpEL
         reader.setResources(resources);
+        // delegate single resource reader for each resource
         reader.setDelegate(flatFileItemReader());
+
         return reader;
     }
 
