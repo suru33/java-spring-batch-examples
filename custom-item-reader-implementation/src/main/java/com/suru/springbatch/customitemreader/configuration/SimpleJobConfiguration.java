@@ -32,7 +32,7 @@ public class SimpleJobConfiguration {
     }
 
     @Bean
-    @StepScope
+    @StepScope // to make aware of each transaction
     public MyItemStreamReader myItemReader() {
         List<String> items = new ArrayList<>();
         for (int i = 1; i <= 100; i++) {
@@ -47,7 +47,7 @@ public class SimpleJobConfiguration {
                 .<String, String>chunk(10)
                 .reader(myItemReader())
                 .writer(stringItemWriter())
-                .stream(myItemReader())
+                .stream(myItemReader()) // to delegate which is opetional
                 .build();
     }
 
