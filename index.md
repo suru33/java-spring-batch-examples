@@ -16,6 +16,8 @@
 12. [xml-reader][12]
 13. [read-multiple-datasources][13]
 14. [custom-item-reader-implementation][14]
+### Output
+15. [writing-to-database][15]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -31,3 +33,4 @@
 [12]: ./xml-reader
 [13]: ./read-multiple-datasources
 [14]: ./custom-item-reader-implementation
+[15]: ./writing-to-database
