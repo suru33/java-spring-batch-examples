@@ -17,7 +17,7 @@
 13. [read-multiple-datasources][13]
 14. [custom-item-reader-implementation][14]
 
-[1]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/hello-world
+[1]: ./hello-world
 [2]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/step-transactions
 [3]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/flow_application
 [4]: https://github.com/jdev-ae/spring-batch-remote-workspace/tree/master/split-app
