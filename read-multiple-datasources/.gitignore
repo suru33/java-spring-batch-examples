@@ -1,0 +1,8 @@
+/.idea/
+/.mvn/
+/target/
+/read-multiple-datasources.iml
+/mvnw.cmd
+/mvnw
+/.project
+/.settings/
