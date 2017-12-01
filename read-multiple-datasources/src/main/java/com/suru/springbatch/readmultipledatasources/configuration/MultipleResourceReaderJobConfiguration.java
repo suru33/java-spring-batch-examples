@@ -6,6 +6,7 @@ import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.item.ItemStream;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.MultiResourceItemReader;
@@ -34,6 +35,8 @@ public class MultipleResourceReaderJobConfiguration {
         reader.setResources(resources);
         // delegate single resource reader for each resource
         reader.setDelegate(flatFileItemReader());
+
+        ItemStream
 
         return reader;
     }
