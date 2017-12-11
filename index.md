@@ -19,6 +19,7 @@
 ### Output
 15. [writing-to-database][15]
 16. [writing-to-file][16]
+17. [write-xml][17]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -36,3 +37,4 @@
 [14]: ./custom-item-reader-implementation
 [15]: ./writing-to-database
 [16]: ./writing-to-file
+[17]: ./write-xml
