@@ -26,6 +26,8 @@
 20. [filter-items][20]
 21. [validation-example][21]
 22. [composite-item-processing][22]
+### Error Handling
+23. [restart-job][23]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -49,3 +51,4 @@
 [20]: ./filter-items
 [21]: ./validation-example
 [22]: ./composite-item-processing
+[23]: ./restart-job
