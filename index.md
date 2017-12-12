@@ -25,7 +25,7 @@
 19. [simple-item-processor][19]
 20. [filter-items][20]
 21. [validation-example][21]
-22. [composite-validation][22]
+22. [composite-item-processing][22]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -48,4 +48,4 @@
 [19]: ./simple-item-processor
 [20]: ./filter-items
 [21]: ./validation-example
-[22]: ./composite-validation
+[22]: ./composite-item-processing
