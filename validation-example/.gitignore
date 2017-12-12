@@ -1,0 +1,7 @@
+.idea/
+.mvn/
+/src/test/
+target/
+mvnw
+mvnw.cmd
+validation-example.iml

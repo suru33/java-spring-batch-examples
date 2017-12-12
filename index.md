@@ -24,6 +24,8 @@
 ### Processing
 19. [simple-item-processor][19]
 20. [filter-items][20]
+21. [validation-example][21]
+22. [composite-validation][22]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -45,3 +47,5 @@
 [18]: ./write-multiple-files
 [19]: ./simple-item-processor
 [20]: ./filter-items
+[21]: ./validation-example
+[22]: ./composite-validation
