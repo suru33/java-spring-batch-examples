@@ -23,6 +23,7 @@
 18. [write-multiple-files][18]
 ### Processing
 19. [simple-item-processor][19]
+20. [filter-items][20]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -43,3 +44,4 @@
 [17]: ./write-xml
 [18]: ./write-multiple-files
 [19]: ./simple-item-processor
+[20]: ./filter-items
