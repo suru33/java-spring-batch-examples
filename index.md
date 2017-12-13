@@ -29,6 +29,7 @@
 ### Error Handling
 23. [restart-job][23]
 24. [retry-job][24]
+25. [skip-items-job][25]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -54,3 +55,4 @@
 [22]: ./composite-item-processing
 [23]: ./restart-job
 [24]: ./retry-job
+[25]: ./skip-items-job

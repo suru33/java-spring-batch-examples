@@ -1,10 +1,10 @@
-package com.suru.springbatch.retryjob.components;
+package com.suru.springbatch.skipitemsjob.components;
 
 import org.springframework.batch.item.ItemWriter;
 
 import java.util.List;
 
-public class RetryItemWriter implements ItemWriter<String> {
+public class SkipItemWriter implements ItemWriter<String> {
 
     private int retryCount = 0;
 
@@ -19,7 +19,7 @@ public class RetryItemWriter implements ItemWriter<String> {
                 } else {
                     String exMessage = "**error writing item: " + i + "**";
                     System.out.println(exMessage);
-                    throw new CustomRetryException(exMessage, retryCount);
+                    throw new CustomSkipException(exMessage, retryCount);
                 }
             } else {
                 System.out.println("writing item: " + i);
