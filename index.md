@@ -28,6 +28,7 @@
 22. [composite-item-processing][22]
 ### Error Handling
 23. [restart-job][23]
+24. [retry-job][24]
 
 [1]: ./hello-world
 [2]: ./step-transactions
@@ -52,3 +53,4 @@
 [21]: ./validation-example
 [22]: ./composite-item-processing
 [23]: ./restart-job
+[24]: ./retry-job
