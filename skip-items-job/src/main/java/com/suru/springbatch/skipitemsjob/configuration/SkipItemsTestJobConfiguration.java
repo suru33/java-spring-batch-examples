@@ -1,6 +1,7 @@
 package com.suru.springbatch.skipitemsjob.configuration;
 
 import com.suru.springbatch.skipitemsjob.components.CustomSkipException;
+import com.suru.springbatch.skipitemsjob.components.CustomSkipListener;
 import com.suru.springbatch.skipitemsjob.components.SkipItemProcessor;
 import com.suru.springbatch.skipitemsjob.components.SkipItemWriter;
 import org.springframework.batch.core.Job;
@@ -55,14 +56,15 @@ public class SkipItemsTestJobConfiguration {
                 .processor(stringItemProcessor())
                 .writer(stringItemWriter())
                 .faultTolerant()
-                .skip(CustomSkipException.class)
-                .skipLimit(15)
+                .skip(CustomSkipException.class) // skip the exception
+                .skipLimit(15) // skip items limit
+                .listener(new CustomSkipListener()) // listener for skip items
                 .build();
     }
 
     @Bean
     public Job job() {
-        return jobBuilderFactory.get("skip-items-test-job")
+        return jobBuilderFactory.get("skip-items-test-job-1")
                 .start(step1())
                 .build();
     }
