@@ -24,7 +24,6 @@ public class RetryItemWriter implements ItemWriter<String> {
             } else {
                 System.out.println("writing item: " + i);
             }
-
         }
     }
 }
