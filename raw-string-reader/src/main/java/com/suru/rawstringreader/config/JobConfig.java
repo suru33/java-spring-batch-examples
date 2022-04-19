@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 
 @Configuration
-
 public class JobConfig {
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
