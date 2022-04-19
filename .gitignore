@@ -2,3 +2,6 @@
 /.recommenders/
 /.sonarlint/
 /RemoteSystemsTempFiles/
+
+.DS_Store
+.idea
