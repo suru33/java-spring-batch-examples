@@ -29,7 +29,7 @@ public class JobConfig {
 
         // reader.setLinesToSkip(1);
 
-        // classpath directly linked to resources folder
+        // path to data file
         reader.setResource(new FileSystemResource("data.txt"));
 
         // line mapper for mapping each line
