@@ -1,0 +1,10 @@
+I had this same issue when creating a Spring Boot application using their
+@SpringBootApplication annotation. This annotation represents @Configuration,
+@EnableAutoConfiguration and @ComponentScan according to the spring reference.
+As expected, the new annotation worked properly and my application ran smoothly but,
+Intellij kept complaining about unfulfilled @Autowire dependencies.
+As soon as I changed back to using @Configuration,
+@EnableAutoConfiguration and @ComponentScan separately, the errors ceased. It seems Intellij 14.0.3
+(and most likely, earlier versions too) is not yet configured to recognise the @SpringBootApplication annotation.
+For now, if the errors disturb you that much, then revert back to those three separate annotations.
+Otherwise, ignore Intellij...your dependency resolution is correctly configured, since your test passes.
